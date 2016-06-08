@@ -20,7 +20,7 @@ export default class Tile {
     // console.log('FACEDOWN :(');
     let imageObj = new Image()
 
-    imageObj.src = "../img/tiles/tile6.jpg"
+    imageObj.src = "../img/tiles/tile.jpg"
     imageObj.width = this.width
 
     imageObj.onload = () => {

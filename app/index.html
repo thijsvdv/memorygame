@@ -2,15 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Club Mate Memory Game - Bier- en Wijnhuis</title>
+    <title>Memory Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta property="og:url" content="http://clubmate.bierenwijnhuis.be"/>
-    <meta property="og:title" content="Club Mate Memory Game - Bier- en Wijnhuis"/>
-    <meta property="og:type" content="game"/>
-    <meta property="og:image" content="/img/logo_hero.png"/>
     <link rel="manifest" href="manifest.json">
-    <link rel="shortcut icon" href="/img/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.png" />
     <link media="all" type="text/css" rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -18,54 +14,9 @@
     
 <div class="content game">
 
-<div class="header header--form">
-    <div class="container">
-        <div class="menu">
-            <div class="logo">
-              <a href="/">
-                <img src="/img/logo_icon.svg">
-                <img src="/img/logo_text.svg">
-              </a>
-            </div>
-
-            <div class="right">
-                <span class="date">
-                    01-30 JUN. '16
-                </span>
-                <span class="tagline">
-                    <strong>Club Mate Memory Game</strong><br>
-                    Wees de snelste &amp; win een citytrip naar Berlijn
-                </span>
-            </div>
-        </div>
-        <div class="hero">
-            <div class="col--23 floatright">
-                <img src="/img/logo_large.png">
-            </div>
-            <div class="col--13">
-                <img src="/img/logo_hero.png" class="alt" alt="">
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-<div class="slice1">
-    <div class="container">
-        <div class="layout">
-            <div class="col--13">
-
-            </div>
-            <div class="col--23">
-                <div class="form">
-                    <p class="title">Let the memory games begin</p>
-                    <p>Vind zo snel mogelijk alle identieke afbeeldingen.</p>
-                    <p>Je tijd begint te lopen zodra je het eerste kaartje aanklikt.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="header">
+    <img src="img/logo-the-aim.png" alt="">
+    <h1>Memory Game</h1>
 </div>
 
 
@@ -78,7 +29,7 @@
             </div>
         </div>
         <div class="col--13">
-        <p class="title__small">Uw tijd</p>
+        <p class="title__small">Your time</p>
         <p class="user__time">00:00</p>
         <hr noshade>
         <p class="title__small">Clicks</p>
@@ -89,44 +40,6 @@
   </div>
 </div>
 
-
-
-    
-    
-
-
-
-
-
-<div class="footer">
-    <div class="container">
-        <div class="content">
-            <p>
-                <img src="/img/logo_icon_white.svg">
-            </p>
-            <p>
-                Het Bier- en Wijnhuis<br>
-                Weygenstraat 10A<br>
-                3060 Bertem<br>
-                Tel: <a href="tel:016/48.91.69" data-category="Phone" data-label="016/48.91.69">016/48.91.69</a>
-            </p>
-            <p class="social">
-                <a href="https://www.facebook.com/bierenwijnhuis.be/" data-category="Outbound Link" data-label="facebook"><img src="/img/facebook.svg"></a>
-                <a href="https://www.youtube.com/user/BierEnWijnhuis" data-category="Outbound Link" data-label="youtube"><img src="/img/youtube.svg"></a>
-                <a href="https://plus.google.com/+BierenwijnhuisBe/about" data-category="Outbound Link" data-label="google+"><img src="/img/google.svg"></a>
-            </p>
-            <p>
-                <a class="url" href="http://www.bierenwijnhuis.be" data-category="Outbound Link" data-label="www.bierenwijnhuis.be">www.bierenwijnhuis.be</a>
-            </p>
-            <p>
-                <a href="http://www.the-aim.be" data-category="Outbound Link" data-label="www.the-aim.be">Website by the AIM</a>
-            </p>
-
-        </div>
-
-    </div>
-</div>
-
 </div>
 
 
@@ -134,10 +47,10 @@
 
 <div class="overlay">
   <div class="content">
-    <img class="logo--overlay" src="/img/logo_hero.png">
-    <p class="title--sub">Bedankt voor je deelname</p>
-    <p>Je vond de oplossing in <strong><span class="is-time"></span> </strong>en <strong><span class="is-clicks"></span> kliks</strong>!</p>
-    <p><a href="#" class="btn js-restart">Opnieuw!</a></p>
+    <img class="logo--overlay" src="/img/logo-the-aim.png">
+    <p class="title--sub">Brilliant!</p>
+    <p>You did it in <strong><span class="is-time"></span> </strong>and <strong><span class="is-clicks"></span> clicks</strong>!</p>
+    <p><a href="#" class="btn js-restart">Play again!</a></p>
   </div>
 </div>
 
@@ -146,10 +59,10 @@
 
 
 
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/moment.min.js"></script>
-    <script src="/js/hashids.js"></script>
-    <script src="/js/pwa.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/moment.min.js"></script>
+<script src="/js/hashids.js"></script>
+<script src="/js/pwa.js"></script>
 
 <script>
 if('serviceWorker' in navigator) {
@@ -158,7 +71,6 @@ if('serviceWorker' in navigator) {
            .then(function() { console.log("Service Worker Registered"); });
 }
 </script>
-
 
 </body>
 </html>

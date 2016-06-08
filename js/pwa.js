@@ -182,7 +182,7 @@ let memory = function() {
 
         var times = [(finalTime + "").slice(0,-2), (finalTime + "").slice(-2)];
 
-        $('.is-time').text(times[0] + ' seconden, ' + times[1] + ' honderdsten');
+        $('.is-time').text(times[0] + '\', ' + times[1] + '"');
         $('.is-clicks').text(numTries);
 
         setTimeout(function() {

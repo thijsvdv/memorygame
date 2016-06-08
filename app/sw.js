@@ -14,16 +14,7 @@ self.addEventListener('install', function(e) {
         '/js/moment.min.js',
         '/js/hashids.js',
         '/js/pwa.js',
-        '/img/logo_icon.svg',
-        '/img/logo_text.svg',
-        '/img/logo_large.png',
-        '/img/logo_hero.png',
-        '/img/facebook.svg',
-        '/img/youtube.svg',
-        '/img/google.svg',
-        '/img/logo_icon_white.svg',
-        '/img/favicon.png',
-        '/img/bg_footer_small_mini.jpg',
+        '/favicon.png',
         '/img/tiles/img1.jpg',
         '/img/tiles/img2.jpg',
         '/img/tiles/img3.jpg',
@@ -32,7 +23,9 @@ self.addEventListener('install', function(e) {
         '/img/tiles/img6.jpg',
         '/img/tiles/img7.jpg',
         '/img/tiles/img8.jpg',
-        '/img/tiles/tile6.jpg'
+        '/img/tiles/tile.jpg',
+        '/img/logo-the-aim.png',
+        'https://fonts.googleapis.com/css?family=Arvo:400,700'
       ]);
     })
   );
