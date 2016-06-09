@@ -2,6 +2,7 @@
 
 Just a little progressive web app demo.
 
+Live demo: https://pwa-memorygame.surge.sh
 
 ## Installation
 ```Shell
