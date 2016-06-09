@@ -2,6 +2,10 @@ import Tile from './tile'
 import config from './config'
 import { helpers, getImage } from './helpers'
 
+$(function() {
+    FastClick.attach(document.body);
+});
+
 helpers()
 
 let memory = function() {
@@ -79,6 +83,7 @@ let memory = function() {
       var hasher = new Hashids(config.hashids.salt, config.hashids.length, config.hashids.alphabet);
 
       timerRunning = true
+      $('.points').addClass('active');
 
       function fix(t) {
         return (t<10) ? '0' + t : t;
@@ -104,11 +109,13 @@ let memory = function() {
 
     // If onclick there are already 2 tiles facing up, and they're not a pair,
     // flip them back immediately before continuing
+    // console.log(flippedTiles.length);
     if(flippedTiles.length === 2) {
-      clearTimeout(hideFaces)
-      for (let i = 0; i < tiles.length; i++) {
-        if (!tiles[i].isMatch) {
-          tiles[i].drawFaceDown()
+      console.log(flippedTiles);
+      clearTimeout(hideFaces);
+      for (let i = 0; i < flippedTiles.length; i++) {
+        if (!flippedTiles[i].isMatch) {
+          flippedTiles[i].drawFaceDown()
         }
       }
       flippedTiles = []
@@ -133,7 +140,9 @@ let memory = function() {
                 flippedTiles[1].isMatch = true
               // else turn them back after a while
               } else {
-                requestAnimFrame(clear)
+                requestAnimFrame(function() {
+                  clear(1000);
+                });
               }
             }
           }
@@ -162,16 +171,15 @@ let memory = function() {
     }
   });
 
-  function clear() {
-    console.log("clear");
-    hideFaces = setTimeout((time) => {
+  function clear(time) {
+    hideFaces = setTimeout(() => {
       for (let i = 0; i < tiles.length; i++) {
         if (!tiles[i].isMatch && !tiles[i].fix) {
           tiles[i].drawFaceDown()
         }
       }
        flippedTiles = []
-    }, 1000)
+    }, time)
   }
 
   function sendXMLHttpRequest($data, $redirect) {
@@ -182,10 +190,11 @@ let memory = function() {
 
         var times = [(finalTime + "").slice(0,-2), (finalTime + "").slice(-2)];
 
-        $('.is-time').text(times[0] + '\', ' + times[1] + '"');
+        $('.is-time').text(times[0] + '\' ' + times[1] + '"');
         $('.is-clicks').text(numTries);
 
         setTimeout(function() {
+          $('.points').removeClass('active');
           $('.overlay').addClass('fadein')
           $('body').addClass('is-finished');
           
@@ -199,6 +208,7 @@ let memory = function() {
 
 $('.js-restart').click(function(e) {
   e.preventDefault();
+  
 
   $('.user__time').text('00:00');
   $('.user__clicks').text('0');

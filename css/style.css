@@ -56,6 +56,7 @@ $blue: #010123;
 /* Styling */
   * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 
     /* Keep everything relative to root size */
     font-size: 1rem;
@@ -340,47 +341,6 @@ $blue: #010123;
       padding: 0 0 0 90px;
     }
   }
-
-  .title__small {
-    font-family: 'Arvo', serif;
-    font-size: 1.5rem;
-    line-height: 1em;
-    color: #00a295;
-  }
-
-  .user__time,
-  .user__clicks {
-    font-family: 'Arvo', serif;
-    font-size: 4rem;
-    line-height: 1em;
-    margin: 0;
-    color: #00a295;
-  }
-
-  hr {
-    width: 100%;
-    height: 1px;
-    border: 0px;
-    background: #00a295;
-    margin: 1rem 0;
-  }
-
-  p.title {
-    font-family: 'Arvo', serif;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 1em !important;
-    margin-top: 4rem;
-
-    &:after {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 5px;
-      background: #000;
-      margin-top: 1.5rem;
-    }
-  }
 }
 
 #game {
@@ -504,4 +464,68 @@ $blue: #010123;
   position: relative;
   width: 100%;
   padding-bottom: 100%;
+}
+
+.points {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #00a295;
+  color: #fff;
+  height: 100px;
+  padding: 0 1rem;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+
+  &.active {
+    opacity: 1;
+  }
+
+  .title__small {
+    font-family: 'Arvo', serif;
+    font-size: 1.5rem;
+    line-height: 1em;
+    // color: #00a295;
+    display: none;
+  }
+
+  .user__time,
+  .user__clicks {
+    font-family: 'Arvo', serif;
+    font-size: 3rem;
+    line-height: 1em;
+    margin: 0;
+    // color: #00a295;
+  }
+
+  hr {
+    // width: 100%;
+    // height: 1px;
+    // border: 0px;
+    // background: #00a295;
+    // background: #fff;
+    // margin: 1rem 0;
+  }
+
+  p.title {
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1em !important;
+    margin-top: 4rem;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 5px;
+      background: #000;
+      margin-top: 1.5rem;
+    }
+  }
 }

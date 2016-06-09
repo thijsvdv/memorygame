@@ -19,6 +19,14 @@
     <h1>Memory Game</h1>
 </div>
 
+<div class="points">
+    <p class="title__small">Your time</p>
+    <p class="user__time">00:00</p>
+    <!--<hr noshade>-->
+    <p class="title__small">Clicks</p>
+    <p class="user__clicks">0</p>
+    <!--<hr noshade>-->
+</div>
 
 <div class="board">
   <div class="container">
@@ -27,14 +35,6 @@
             <div class="canvas">
                 <canvas id="game"></canvas>
             </div>
-        </div>
-        <div class="col--13">
-        <p class="title__small">Your time</p>
-        <p class="user__time">00:00</p>
-        <hr noshade>
-        <p class="title__small">Clicks</p>
-        <p class="user__clicks">0</p>
-        <hr noshade>
         </div>
       </div>
   </div>
@@ -51,6 +51,8 @@
     <p class="title--sub">Brilliant!</p>
     <p>You did it in <strong><span class="is-time"></span> </strong>and <strong><span class="is-clicks"></span> clicks</strong>!</p>
     <p><a href="#" class="btn js-restart">Play again!</a></p>
+    <p>&nbsp;</p>
+    <p><a href="https://twitter.com/thijsvandevelde">Follow me</a></p>
   </div>
 </div>
 
@@ -60,6 +62,7 @@
 
 
 <script src="/js/jquery.min.js"></script>
+<script src="/js/fastclick.js"></script>
 <script src="/js/moment.min.js"></script>
 <script src="/js/hashids.js"></script>
 <script src="/js/pwa.js"></script>
@@ -67,7 +70,7 @@
 <script>
 if('serviceWorker' in navigator) {
   navigator.serviceWorker
-           .register('./sw.js')
+           .register('./service-worker.js')
            .then(function() { console.log("Service Worker Registered"); });
 }
 </script>

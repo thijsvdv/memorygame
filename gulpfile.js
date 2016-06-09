@@ -50,6 +50,15 @@ gulp.task('js', ['lint'], function() {
   .pipe(buffer())
   .pipe(uglify({ mangle: true }))
   .pipe(gulp.dest('./app/js'));
+
+  // browserify('./js/tappy.js', { debug: true })
+  // .transform(babelify)
+  // .bundle()
+  // .on('error', util.log.bind(util, 'Browserify Error'))
+  // .pipe(source('tappy.js'))
+  // .pipe(buffer())
+  // .pipe(uglify({ mangle: true }))
+  // .pipe(gulp.dest('./app/js'));
 });
 
 gulp.task('lint', function(){
@@ -63,4 +72,15 @@ gulp.task('watch', function() {
   livereload.listen();
   gulp.watch('css/*.css', ['css']);
   gulp.watch('js/*.js', ['js']);
+});
+
+gulp.task('generate-service-worker', function(callback) {
+  var path = require('path');
+  var swPrecache = require('sw-precache');
+  var rootDir = 'app';
+
+  swPrecache.write(path.join(rootDir, 'service-worker.js'), {
+    staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}'],
+    stripPrefix: rootDir
+  }, callback);
 });

@@ -1,7 +1,6 @@
 importScripts('/cache-polyfill.js');
 
 self.addEventListener('install', function(e) {
-  console.log('IERSE DOARSE');
   e.waitUntil(
     caches.open('memorygame').then(function(cache) {
       return cache.addAll([
